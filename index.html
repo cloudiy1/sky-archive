@@ -144,6 +144,58 @@ h2{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:0 0 20px;
 .links a.tw{border-color:var(--twitch)}
 footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:8px}
 footer a{color:var(--muted)}
+.contact{display:flex;flex-direction:column;gap:6px;margin-top:10px;padding-top:14px;border-top:1px dashed var(--line)}
+.mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+footer a.mail{font-family:var(--mono);font-size:15px;color:var(--ice);text-decoration:none;user-select:all;overflow-wrap:anywhere}
+footer a.mail:hover{text-decoration:underline}
+.copy{font:inherit;font-size:12px;padding:5px 10px;border-radius:3px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+.copy:hover{border-color:var(--ice)}
+.copy:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+
+/* socials */
+.socials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.soc{position:relative;display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:6px;text-decoration:none;color:var(--fg);min-width:0;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--c) 14%,var(--panel)),var(--panel) 60%);
+  border:1px solid color-mix(in srgb,var(--c) 35%,var(--line));transition:transform .15s,border-color .15s,box-shadow .15s}
+.soc:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 8px 24px -12px var(--c)}
+.soc:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.soc.main{grid-column:1/-1}
+.sic{flex:none;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c)}
+.sic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sic svg .fill{fill:currentColor;stroke:none}
+.soc.main .sic{width:56px;height:56px;border-radius:14px}
+.soc.main .sic{position:relative}
+.soc.main .sic::after{content:"";position:absolute;right:-3px;top:-3px;width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--panel)}
+.stx{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+.stx b{font-size:1.05rem}
+.stx small{font-family:var(--mono);font-size:13px;color:var(--c);overflow-wrap:anywhere}
+.stx em{font-style:normal;font-size:13px;color:var(--muted)}
+.sgo{flex:none;font-size:1.2rem;color:var(--muted);transition:color .15s,transform .15s}
+.soc:hover .sgo{color:var(--c);transform:translate(2px,-2px)}
+
+/* games */
+.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.game{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;min-width:0}
+.gscreen{text-decoration:none;position:relative;aspect-ratio:16/9;max-width:100%;width:100%;border:0;padding:0;margin:0;cursor:pointer;display:block;color:#fff;
+  background:repeating-linear-gradient(90deg,rgba(156,200,236,.05) 0 2px,transparent 2px 6px),linear-gradient(135deg,#1b2436,#0f1420)}
+.gscreen:focus-visible{outline:2px solid var(--ice);outline-offset:-2px}
+.gscreen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gscreen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.55))}
+.gscreen .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:64px;height:44px;border-radius:12px;background:var(--red);display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.gscreen:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.gscreen .play::before{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.gscreen .dur{position:absolute;right:8px;bottom:8px;z-index:1;background:rgba(0,0,0,.8);font-family:var(--mono);font-size:12px;padding:2px 6px;border-radius:3px}
+.gscreen .gname{position:absolute;left:12px;bottom:8px;z-index:1;font-family:var(--display);font-weight:800;font-size:1.05rem;text-align:left;max-width:70%;line-height:1.15;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.gscreen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
+.gbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px}
+.gbody b{font-size:15px;line-height:1.35}
+.gtags{display:flex;flex-wrap:wrap;gap:6px}
+.gtag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid var(--line);color:var(--muted)}
+.gtag.h{border-color:rgba(229,72,77,.5);color:#f0a0a3}
+.gmeta{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.gmeta em{font-style:normal;color:var(--ice)}
+.gmeta a{color:var(--muted)}
 
 /* quiz */
 .quiz{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:22px}
@@ -182,11 +234,12 @@ footer a{color:var(--muted)}
   .hero,.story{grid-template-columns:minmax(0,1fr);gap:28px}
   .photo{max-width:420px}
   .facts,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .trivia,.setup,.clips{grid-template-columns:minmax(0,1fr)}
+  .trivia,.setup,.clips,.games,.socials{grid-template-columns:minmax(0,1fr)}
   .tl li{grid-template-columns:minmax(0,1fr);gap:4px}
 }
 @media (max-width:420px){.facts{grid-template-columns:minmax(0,1fr)}}
-@media (prefers-reduced-motion:reduce){.links a,.clip,.qopt,.qst .bar i{transition:none}.clip:hover,.links a:hover{transform:none}}
+.soc{position:relative}
+@media (prefers-reduced-motion:reduce){.soc,.sgo,.links a,.clip,.qopt,.qst .bar i{transition:none}.clip:hover,.links a:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -194,7 +247,7 @@ footer a{color:var(--muted)}
 
 <div class="wrap">
   <nav aria-label="Разделы">
-    <a href="#dossier">Досье</a><a href="#stats">Цифры</a><a href="#story">История</a><a href="#facts">Фишки</a><a href="#quiz">Тест</a><a href="#setup">Сетап</a><a href="#clips">Нарезки</a><a href="#links">Ссылки</a>
+    <a href="#dossier">Досье</a><a href="#stats">Цифры</a><a href="#story">История</a><a href="#facts">Фишки</a><a href="#quiz">Тест</a><a href="#setup">Сетап</a><a href="#clips">Нарезки</a><a href="#games">Прохождения</a><a href="#links">Ссылки</a>
   </nav>
 
   <section class="hero">
@@ -345,20 +398,52 @@ footer a{color:var(--muted)}
     </div>
   </section>
 
+  <section id="games">
+    <h2>Прохождения</h2>
+    <p class="sub">15 самых популярных прохождений Ская за последние три года, от самого просматриваемого. Хорроры, новеллы, Elden Ring и кооп со Stanislaw9.</p>
+    <div class="disclaimer"><span class="k">Важно</span><div><strong>Эти видео не наши.</strong> Это нарезки стримов с каналов <b>РЕЖУ SKYWHYWALKER</b>, <b>skywhywalker нарезки</b> и <b>SKYWHYREZKI</b>. Канал-автор указан на каждой карточке — заходи к ним и подписывайся.</div></div>
+    <div class="games" id="gamesList"></div>
+  </section>
+
   <section id="links">
     <h2>Где смотреть</h2>
-    <div class="links">
-      <a class="tw" href="https://www.twitch.tv/skywhywalker" target="_blank" rel="noopener">Twitch <small>@skywhywalker</small></a>
-      <a href="https://www.youtube.com/@skywhywalker" target="_blank" rel="noopener">YouTube <small>@skywhywalker</small></a>
-      <a href="https://t.me/skywhyw4lker" target="_blank" rel="noopener">Telegram <small>@skywhyw4lker</small></a>
-      <a href="https://www.tiktok.com/@skywhywalker" target="_blank" rel="noopener">TikTok <small>@skywhywalker</small></a>
-      <a href="https://vk.com/skywhywalk" target="_blank" rel="noopener">VK <small>skywhywalk</small></a>
+    <div class="socials">
+      <a class="soc main" style="--c:#a970ff" href="https://www.twitch.tv/skywhywalker" target="_blank" rel="noopener">
+        <span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.4 5.4a9.3 9.3 0 0 0 0 13.2M18.6 5.4a9.3 9.3 0 0 1 0 13.2"/></svg></span>
+        <span class="stx"><b>Twitch</b><small>@skywhywalker</small><em>Стримы: CS2, хорроры, киновечера</em></span>
+        <span class="sgo" aria-hidden="true">↗</span>
+      </a>
+      <a class="soc" style="--c:#ff5a5f" href="https://www.youtube.com/@skywhywalker" target="_blank" rel="noopener">
+        <span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z" class="fill"/></svg></span>
+        <span class="stx"><b>YouTube</b><small>@skywhywalker</small><em>Ролики и моменты</em></span>
+        <span class="sgo" aria-hidden="true">↗</span>
+      </a>
+      <a class="soc" style="--c:#35b4ec" href="https://t.me/skywhyw4lker" target="_blank" rel="noopener">
+        <span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l6 4V6L7 10z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></svg></span>
+        <span class="stx"><b>Telegram</b><small>@skywhyw4lker</small><em>Новости и анонсы стримов</em></span>
+        <span class="sgo" aria-hidden="true">↗</span>
+      </a>
+      <a class="soc" style="--c:#2ee6e0" href="https://www.tiktok.com/@skywhywalker" target="_blank" rel="noopener">
+        <span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span>
+        <span class="stx"><b>TikTok</b><small>@skywhywalker</small><em>Короткие клипы</em></span>
+        <span class="sgo" aria-hidden="true">↗</span>
+      </a>
+      <a class="soc" style="--c:#6a9be0" href="https://vk.com/skywhywalk" target="_blank" rel="noopener">
+        <span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M15.5 14.2a4.6 4.6 0 0 1 5 4.8"/></svg></span>
+        <span class="stx"><b>VK</b><small>skywhywalk</small><em>Сообщество фанатов</em></span>
+        <span class="sgo" aria-hidden="true">↗</span>
+      </a>
     </div>
   </section>
 
   <footer>
     <span>Sky Archive — неофициальный фан-сайт, сделан фанатом. Не связан со стримером. Все видео принадлежат их авторам.</span>
     <span>Источники: <a href="https://cyber.sports.ru/streamers-twitch/blogs/3388632.html" target="_blank" rel="noopener">Cyber.Sports.ru</a>, <a href="https://esports.ru/counter-strike-2/news/skywhywalker-iznachalno-ne-planiroval-bez-vebki-strimit/" target="_blank" rel="noopener">Esports.ru</a>, <a href="https://esports.ru/news/skywhywalker-nazval-strogo-luchshim-cs-strimerom-slay-2025/" target="_blank" rel="noopener">Esports.ru (SLAY)</a>, <a href="https://respawn.media/celebrities/caw5b-skywhywalker-poluchil-permach-iz-za-kotorogo-nakonets-vyshel-na-ulitsu" target="_blank" rel="noopener">Respawn Media</a>, <a href="https://www.twitchmetrics.net/c/254030065-skywhywalker" target="_blank" rel="noopener">TwitchMetrics</a>, <a href="https://faceittracker.net/players/skywhywalker" target="_blank" rel="noopener">Faceit Tracker</a>, <a href="https://www.faceit.com/ru/players/skywhywalker" target="_blank" rel="noopener">Faceit</a>, описание <a href="https://www.twitch.tv/skywhywalker/about" target="_blank" rel="noopener">Twitch-канала</a> (девайсы).</span>
+    <div class="contact">
+      <span class="k">Связь</span>
+      <span>Нашёл ошибку, хочешь что-то добавить или предложить клип? Пиши:</span>
+      <span class="mailrow"><a class="mail" id="mailAddr" href="mailto:xcloudy666@gmail.com">xcloudy666@gmail.com</a><button class="copy" id="mailCopy" type="button">Скопировать</button></span>
+    </div>
   </footer>
 </div>
 
@@ -374,6 +459,67 @@ footer a{color:var(--muted)}
   document.getElementById('age').textContent=pl(age,'год','года','лет');
   document.getElementById('countdown').textContent=days===0?'Сегодня! 🎉':pl(days,'день','дня','дней');
   document.getElementById('nextage').textContent=days===0?'С днём рождения!':'исполнится '+pl(bd.getFullYear()-2003,'год','года','лет');
+})();
+
+(function(){
+  var btn=document.getElementById('mailCopy'), mail='xcloudy666@gmail.com';
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    function done(){btn.textContent='Скопировано';setTimeout(function(){btn.textContent='Скопировать';},1800);}
+    function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('mailAddr'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Выделено — скопируй';}
+    try{navigator.clipboard.writeText(mail).then(done,fallback);}catch(e){fallback();}
+  });
+})();
+
+(function(){
+  var CH={
+    rezhu:{n:'РЕЖУ SKYWHYWALKER',u:'https://www.youtube.com/channel/UCtYriju-qv3tgo4STXiv9ww'},
+    narezki:{n:'skywhywalker нарезки',u:'https://www.youtube.com/channel/UC2MV67n8vqv9bpjGK78_Byw'},
+    rezki:{n:'SKYWHYREZKI',u:'https://www.youtube.com/channel/UCv1ypzTpJuNuumxWn8TcLgA'}
+  };
+  var G=[
+    {id:'7-NnXNAH6gk',g:'Escape from Yandere',t:'Skywhywalker проходит Escape from Yandere',ch:'rezhu',d:'1:13:19',m:'Фев 2026',v:'330 тыс.',tags:['Хоррор']},
+    {id:'RjtX5H0TqpQ',g:'MiSide',t:'Скай проходит MiSide',ch:'rezhu',d:'3:47:18',m:'Дек 2024',v:'185 тыс.',tags:['Хоррор']},
+    {id:'lI3RtUmPRUw',g:'Doki Doki Literature Club!',t:'Как Скай проходил Doki Doki Literature Club!',ch:'rezhu',d:'2:33:11',m:'Окт 2025',v:'174 тыс.',tags:['Новелла','Хоррор']},
+    {id:'ildoyKJ0GCI',g:'HELLMART',t:'Как Skywhywalker проходил HELLMART',ch:'rezhu',d:'1:42:37',m:'Фев 2026',v:'136 тыс.',tags:['Хоррор']},
+    {id:'F_CUQ3_9fls',g:'Amnesia: The Bunker',t:'Как Скай боялся скримеров в Amnesia: The Bunker',ch:'rezhu',d:'1:18:48',m:'Сен 2025',v:'92 тыс.',tags:['Хоррор']},
+    {id:'rCow2_IngF4',g:'KIOSK',t:'Как Скай начал проходить KIOSK',ch:'rezhu',d:'0:29:40',m:'Янв 2026',v:'84 тыс.',tags:['Хоррор']},
+    {id:'CcBBnfUIhB4',g:'No, I’m not a Human',t:'Проходит No, I’m not a Human',ch:'rezki',d:'3:26:44',m:'Авг 2026',v:'83 тыс.',tags:['Хоррор']},
+    {id:'qC27KzuyHC4',g:'Fears to Fathom: Scratch Creek',t:'Вместе со Stanislaw9 проходят Fears to Fathom — Scratch Creek',ch:'rezki',d:'1:58:50',m:'Июн 2026',v:'75 тыс.',tags:['Хоррор','Кооп']},
+    {id:'2RLmyo3LmQI',g:'Parasocial',t:'Этот хоррор знает всё о тебе: Скай проходит Parasocial',ch:'rezhu',d:'0:39:23',m:'Июн 2025',v:'57 тыс.',tags:['Хоррор']},
+    {id:'OwSuJfSqx1c',g:'The Exit 8',t:'Как Skywhywalker заспидранил The Exit 8',ch:'rezhu',d:'0:14:08',m:'Янв 2026',v:'57 тыс.',tags:['Аномалии','Спидран']},
+    {id:'h1WI3euLnEA',g:'Photomaly',t:'Первый стрим после бана и хоррор Photomaly',ch:'rezki',d:'1:47:24',m:'Июл 2026',v:'51 тыс.',tags:['Хоррор']},
+    {id:'lTjRdGwHpN4',g:'Elden Ring',t:'Skywhywalker играет в Elden Ring (часть 4)',ch:'rezhu',d:'1:52:49',m:'Ноя 2023',v:'49 тыс.',tags:['Соулслайк']},
+    {id:'JaMARiJmejA',g:'Egging On',t:'Как Скай проходил яйцо: Egging On',ch:'rezhu',d:'2:07:06',m:'Дек 2025',v:'47 тыс.',tags:['Хардкор']},
+    {id:'slrIm02zkAY',g:'Fears to Fathom: Woodbury Getaway',t:'Этот хоррор сломал Скаю психику: Woodbury Getaway',ch:'rezhu',d:'0:40:20',m:'Май 2025',v:'47 тыс.',tags:['Хоррор']},
+    {id:'YCiFhLoQiOk',g:'Little Hope',t:'Вместе со Stanislaw9 проходят The Dark Pictures: Little Hope',ch:'rezki',d:'1:51:25',m:'Июн 2026',v:'44 тыс.',tags:['Хоррор','Кооп']}
+  ];
+  // Встроенный плеер работает на настоящем сайте; в превью-режиме видео открывается на YouTube.
+  var canEmbed=/github\.io$|netlify\.app$/.test(location.hostname)||location.protocol==='file:';
+  var box=document.getElementById('gamesList'); if(!box)return;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  box.innerHTML=G.map(function(v,i){
+    var c=CH[v.ch];
+    return '<article class="game">'+
+      (canEmbed?'<button class="gscreen" type="button" data-i="'+i+'" aria-label="Смотреть: '+esc(v.g)+'">':'<a class="gscreen" href="https://www.youtube.com/watch?v='+v.id+'" target="_blank" rel="noopener" aria-label="Смотреть на YouTube: '+esc(v.g)+'">')+
+        '<img src="https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">'+
+        '<span class="gname">'+esc(v.g)+'</span><span class="play" aria-hidden="true"></span><span class="dur">'+v.d+'</span>'+
+      (canEmbed?'</button>':'</a>')+
+      '<div class="gbody"><div class="gtags">'+v.tags.map(function(t){return '<span class="gtag'+(t==='Хоррор'?' h':'')+'">'+t+'</span>';}).join('')+'</div>'+
+      '<b>'+esc(v.t)+'</b>'+
+      '<span class="gmeta">Канал: <a href="'+c.u+'" target="_blank" rel="noopener"><em>'+esc(c.n)+'</em></a> · '+v.m+' · '+v.v+' просмотров · <a href="https://www.youtube.com/watch?v='+v.id+'" target="_blank" rel="noopener">на YouTube ↗</a></span></div>'+
+    '</article>';
+  }).join('');
+  if(canEmbed)Array.prototype.forEach.call(box.querySelectorAll('button.gscreen'),function(b){
+    b.addEventListener('click',function(){
+      var v=G[+b.getAttribute('data-i')];
+      var w=document.createElement('div'); w.className='gscreen';
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0';
+      f.title=v.t; f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
+      w.appendChild(f); b.replaceWith(w);
+    });
+  });
 })();
 
 (function(){
