@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sky Archive — фан-сайт о Skywhywalker (Скайвайволкер)</title>
+<meta name="description" content="Sky Archive — фан-сайт о стримере Skywhywalker (Тимур Леонов): биография, дата рождения, факты, хронология, девайсы, нарезки и тест на 20 вопросов.">
+<meta name="keywords" content="Sky Archive, skywhywalker, скайвайволкер, скайволкер, Тимур Леонов, skywhywalker фан сайт, skywhywalker биография, skywhywalker тест, skywhywalker девайсы, skywhywalker faceit">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0c0f16">
+<link rel="icon" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sky Archive">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Sky Archive — фан-сайт о Skywhywalker">
+<meta property="og:description" content="Биография, факты, девайсы, нарезки и тест: насколько хорошо ты знаешь Ская?">
+<meta property="og:image" content="https://cloudiy1.github.io/sky-archive/preview.jpg">
+<meta property="og:url" content="https://cloudiy1.github.io/sky-archive/">
+<link rel="canonical" href="https://cloudiy1.github.io/sky-archive/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cloudiy1.github.io/sky-archive/preview.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Sky Archive", "description": "Sky Archive — фан-сайт о стримере Skywhywalker (Тимур Леонов): биография, дата рождения, факты, хронология, девайсы, нарезки и тест на 20 вопросов.", "inLanguage": "ru", "about": {"@type": "Person", "name": "Тимур Леонов", "alternateName": ["Skywhywalker", "Скайвайволкер", "Скайволкер"], "birthDate": "2003-11-25", "sameAs": ["https://www.twitch.tv/skywhywalker", "https://www.youtube.com/@skywhywalker", "https://t.me/skywhyw4lker"]}}</script>
+<style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: long single-column fan profile — photo hero, dossier grid, stats strip, story, timeline, facts, setup, clip grid, links. Committed dark look (night stream room). */
+:root{
+  --bg:#0c0f16;
+  --panel:#141a26;
+  --panel2:#192133;
+  --line:#243047;
+  --fg:#eef2f8;
+  --muted:#93a0b8;
+  --ice:#9cc8ec;      /* mask blue */
+  --twitch:#a970ff;
+  --red:#e5484d;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto;padding-block:40px 64px;display:flex;flex-direction:column;gap:64px}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tag b{color:var(--ice);font-weight:600}
+a{color:var(--ice)}
+
+/* nav */
+nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--ice)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:end}
+.photo{position:relative;margin:0}
+.photo img{display:block;width:100%;max-width:100%;aspect-ratio:736/1157;object-fit:cover;border-radius:4px;filter:saturate(.9) contrast(1.03)}
+.photo figcaption{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.live{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:8px;background:rgba(12,15,22,.78);
+  padding:5px 10px;border-radius:3px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--fg)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--red);display:block}
+.name{display:flex;flex-direction:column;gap:18px;min-width:0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,7vw,4.6rem);line-height:.95;margin:0;letter-spacing:-.02em;overflow-wrap:anywhere}
+h1 span{color:var(--ice)}
+.real{font-size:1.25rem;font-weight:600;margin:0}
+.real em{font-style:normal;color:var(--muted);font-weight:400}
+.lede{color:var(--muted);max-width:52ch;margin:0}
+
+h2{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:0 0 20px;text-wrap:balance}
+.sub{color:var(--muted);margin:-10px 0 20px;max-width:62ch}
+
+/* facts grid */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.fact{background:var(--panel);padding:18px 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-size:1.15rem;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.fact .s{font-size:13px;color:var(--muted)}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.stat{display:flex;flex-direction:column;gap:4px;border-top:2px solid var(--ice);padding-top:14px;min-width:0}
+.stat .n{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1;font-variant-numeric:tabular-nums}
+.stat .d{font-size:14px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);margin-top:16px;font-family:var(--mono)}
+
+/* story */
+.story{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px}
+.story p{margin:0 0 14px;max-width:62ch}
+.quote{border-left:2px solid var(--ice);padding:4px 0 4px 18px;margin:0;font-size:1.05rem}
+.quote cite{display:block;margin-top:8px;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.tl li:first-child{border-top:1px solid var(--line)}
+.tl time{font-family:var(--mono);font-size:13px;color:var(--ice);padding-top:2px}
+.tl b{display:block;margin-bottom:2px}
+.tl span{color:var(--muted);font-size:15px}
+
+/* trivia */
+.trivia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tri{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tri h3{margin:0;font-size:1.05rem;font-weight:700}
+.tri p{margin:0;color:var(--muted);font-size:15px}
+
+/* setup */
+.setup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
+.row .k{flex:none}
+.row .v{text-align:right;font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+
+/* clips */
+.disclaimer{display:flex;gap:12px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:14px 16px;margin-bottom:20px;font-size:14px}
+.disclaimer strong{color:var(--fg)}
+.disclaimer .k{flex:none;padding-top:2px;color:var(--red)}
+.clips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.clip{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;
+  text-decoration:none;color:var(--fg);transition:border-color .15s,transform .15s;min-width:0}
+.clip:hover{border-color:var(--ice);transform:translateY(-2px)}
+.clip:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+.screen{position:relative;aspect-ratio:16/9;max-width:100%;background:
+  repeating-linear-gradient(90deg,rgba(156,200,236,.05) 0 2px,transparent 2px 6px),
+  linear-gradient(135deg,#1b2436,#0f1420);display:flex;align-items:center;justify-content:center}
+.screen .play{width:56px;height:40px;border-radius:10px;background:var(--red);display:flex;align-items:center;justify-content:center}
+.screen .play::before{content:"";border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:3px}
+.screen .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.8);color:#fff;font-family:var(--mono);font-size:12px;padding:2px 6px;border-radius:3px}
+.screen .src{position:absolute;left:10px;top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.cbody b{font-size:15px;line-height:1.35}
+.cmeta{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cmeta em{font-style:normal;color:var(--ice)}
+
+/* links */
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links a{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--line);border-radius:3px;
+  color:var(--fg);text-decoration:none;font-weight:600;background:var(--panel);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--ice);transform:translateY(-1px)}
+.links a:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+.links a small{font-family:var(--mono);font-weight:400;color:var(--muted)}
+.links a.tw{border-color:var(--twitch)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+footer a{color:var(--muted)}
+
+/* quiz */
+.quiz{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:22px}
+.qstages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.qst{display:flex;flex-direction:column;gap:6px;min-width:0}
+.qst .bar{height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.qst .bar i{display:block;height:100%;width:0;background:var(--ice);transition:width .25s}
+.qst .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);overflow-wrap:anywhere}
+.qst.on .lab{color:var(--ice)}
+.qhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.qtext{font-size:1.25rem;font-weight:700;line-height:1.35;margin:0;text-wrap:balance}
+.qopts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.qopt{font:inherit;font-weight:600;text-align:left;padding:14px 16px;border-radius:4px;border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;transition:border-color .15s}
+.qopt:hover:not(:disabled){border-color:var(--ice)}
+.qopt:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+.qopt:disabled{cursor:default}
+.qopt.ok{border-color:#3fb950;background:rgba(63,185,80,.14)}
+.qopt.bad{border-color:var(--red);background:rgba(229,72,77,.14)}
+.qfb{margin:0;font-size:15px;color:var(--muted)}
+.qfb b{color:var(--fg)}
+.qbtn{align-self:flex-start;font:inherit;font-weight:700;padding:12px 22px;border-radius:4px;border:0;background:var(--ice);color:#0c0f16;cursor:pointer}
+.qbtn:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.qintro{display:flex;flex-direction:column;gap:6px}
+.qintro .big{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.05;margin:0}
+.qres{display:flex;flex-direction:column;gap:16px}
+.qres .rank{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1;color:var(--ice);margin:0}
+.qres .score{font-family:var(--mono);color:var(--muted)}
+.qbreak{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:520px){.qbreak{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qbreak div{border-top:2px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.qbreak b{font-size:1.2rem;font-variant-numeric:tabular-nums}
+
+@media (max-width:760px){
+  .qopts{grid-template-columns:minmax(0,1fr)}
+  .quiz{padding:18px}
+  .hero,.story{grid-template-columns:minmax(0,1fr);gap:28px}
+  .photo{max-width:420px}
+  .facts,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trivia,.setup,.clips{grid-template-columns:minmax(0,1fr)}
+  .tl li{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+@media (max-width:420px){.facts{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.links a,.clip,.qopt,.qst .bar i{transition:none}.clip:hover,.links a:hover{transform:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav aria-label="Разделы">
+    <a href="#dossier">Досье</a><a href="#stats">Цифры</a><a href="#story">История</a><a href="#facts">Фишки</a><a href="#quiz">Тест</a><a href="#setup">Сетап</a><a href="#clips">Нарезки</a><a href="#links">Ссылки</a>
+  </nav>
+
+  <section class="hero">
+    <figure class="photo">
+      <img src="photo.jpg" width="700" height="1100" alt="Skywhywalker в медицинской маске и чёрно-белом шарфе">
+      <div class="live"><i></i>FACE&nbsp;REVEAL?</div>
+      <figcaption>Одно из редких фото — в маске, как обычно.</figcaption>
+    </figure>
+    <div class="name">
+      <div class="tag"><b>Sky Archive</b> · фан-сайт о Skywhywalker</div>
+      <h1>Sky<span>why</span>walker</h1>
+      <p class="real">Тимур Леонов <em>· он же Скайвайволкер, Скай</em></p>
+      <p class="lede">Российский стример, который вырос до миллиона с лишним фолловеров на Twitch, так ни разу и не включив вебку. Играет в Counter-Strike на Faceit, смотрит фильмы со зрителями и держит лицо в секрете.</p>
+    </div>
+  </section>
+
+  <section id="dossier">
+    <h2>Досье</h2>
+    <div class="facts">
+      <div class="fact"><span class="k">Настоящее имя</span><span class="v">Тимур Леонов</span></div>
+      <div class="fact"><span class="k">Никнейм</span><span class="v">Skywhywalker</span><span class="s">Особого смысла в нике нет</span></div>
+      <div class="fact"><span class="k">Дата рождения</span><span class="v">25.11.2003</span><span class="s" id="age">22 года</span></div>
+      <div class="fact"><span class="k">Страна</span><span class="v">Россия</span><span class="s">Город публично не называл</span></div>
+      <div class="fact"><span class="k">Знак зодиака</span><span class="v">Стрелец</span></div>
+      <div class="fact"><span class="k">До дня рождения</span><span class="v" id="countdown">—</span><span class="s" id="nextage">исполнится 23</span></div>
+      <div class="fact"><span class="k">Платформа</span><span class="v">Twitch</span><span class="s">1,36 млн+ фолловеров</span></div>
+      <div class="fact"><span class="k">Основная игра</span><span class="v">Counter-Strike 2</span><span class="s">Чаще всего Faceit</span></div>
+      <div class="fact"><span class="k">Фишка</span><span class="v">Без вебки</span><span class="s">Лицо полностью не показывал</span></div>
+    </div>
+  </section>
+
+  <section id="stats">
+    <h2>В цифрах</h2>
+    <div class="stats">
+      <div class="stat"><span class="n">1,36 млн</span><span class="d">фолловеров на Twitch</span></div>
+      <div class="stat"><span class="n">~10 тыс.</span><span class="d">зрителей в среднем на стриме</span></div>
+      <div class="stat"><span class="n">#5</span><span class="d">среди русскоязычных CS-каналов Twitch</span></div>
+      <div class="stat"><span class="n">2,47 млн</span><span class="d">просмотров у самого популярного ролика на YouTube</span></div>
+    </div>
+    <p class="note">По данным TwitchMetrics, Faceit и YouTube на осень 2026. Цифры меняются каждый день.</p>
+  </section>
+
+  <section id="story" class="story">
+    <div>
+      <h2>Почему без камеры</h2>
+      <p>Тимур собирался включить вебку, как только наберёт пару сотен зрителей. Но онлайн рос быстрее, чем он успевал её купить: 100, потом 200, 300, 500, тысяча. В какой-то момент камера просто стала не нужна, и анонимность превратилась в его фирменный стиль.</p>
+      <p>Единственное фото в маске он выложил в своём Telegram-канале в сентябре 2022 года. В начале 2026-го он сказал, что шанс увидеть стримы с вебкой сейчас выше, чем когда-либо, но обещать ничего не стал.</p>
+    </div>
+    <blockquote class="quote">
+      «Изначально я вообще не планировал без вебки стримить»
+      <cite>Тимур «Skywhywalker» Леонов, 2026</cite>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Хронология</h2>
+    <ol class="tl">
+      <li><time>25.11.2003</time><div><b>Родился в России</b><span>Через 20 лет станет одним из самых смотрибельных CS-стримеров ру-Твича.</span></div></li>
+      <li><time>Фев 2022</time><div><b>«s1mple vs skywhywalker»</b><span>Ролик о матче против s1mple набирает больше 2 млн просмотров.</span></div></li>
+      <li><time>Авг 2022</time><div><b>«ABSOLUTE ?»</b><span>Самое популярное видео на его YouTube-канале, почти 2,5 млн просмотров.</span></div></li>
+      <li><time>Сен 2022</time><div><b>Фото в маске</b><span>Единственный «полу-фейсрил», выложенный в Telegram.</span></div></li>
+      <li><time>Июн 2023</time><div><b>7 часов в Only Up</b><span>Упал в самый низ после семи часов подъёма. Клип разлетелся на 1,4 млн просмотров.</span></div></li>
+      <li><time>Авг 2025</time><div><b>Турнир 2×2</b><span>Вместе со Strogo играл против Evelone и DEKO.</span></div></li>
+      <li><time>Ноя 2025</time><div><b>Фавориты SLAY 2025</b><span>На стриме назвал Strogo лучшим CS-стримером года, а Evelone — «SLAY KING».</span></div></li>
+      <li><time>Фев 2026</time><div><b>Намёк на вебку</b><span>Сказал, что шанс стримов с камерой высок как никогда.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="facts">
+    <h2>Фишки и факты</h2>
+    <div class="trivia">
+      <div class="tri"><h3>Миллион без лица</h3><p>Почти никто из топовых стримеров не набирал такую аудиторию без вебки. Зрители знают его только по голосу и игре.</p></div>
+      <div class="tri"><h3>Киновечера</h3><p>Кроме CS, он часто смотрит фильмы вместе с чатом. Название стрима «выбираем фильм» — классика канала.</p></div>
+      <div class="tri"><h3>Бан за «Backrooms»</h3><p>Однажды получил перманентный бан на Twitch за просмотр фильма на стриме. Пошутил, что зато наконец вышел на улицу, и подал апелляцию.</p></div>
+      <div class="tri"><h3>Соло-игрок</h3><p>Чаще всего играет на Faceit один, иногда собирается вместе со Strogo. В матчмейкинге попадал против donk и s1mple.</p></div>
+      <div class="tri"><h3>Сам себе мем</h3><p>Нарезки с ним выпускают десятки фанатских каналов. Есть даже отдельные каналы, полностью посвящённые его клипам.</p></div>
+      <div class="tri"><h3>Свободный агент</h3><p>Играет на высоком уровне, но в профессиональной команде не состоит.</p></div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <h2>Тест: насколько ты знаешь Ская</h2>
+    <p class="sub">20 вопросов в четыре этапа: от новичка до олда, а в конце — его статистика на Faceit. Ответь на всё и узнай свой ранг.</p>
+    <div class="quiz" id="quizBox">
+      <div class="qstages" id="qStages"></div>
+      <div id="qMain"></div>
+    </div>
+  </section>
+
+  <section id="setup">
+    <h2>Сетап</h2>
+    <p class="sub">На чём играет Скай. Список из описания его Twitch-канала.</p>
+    <div class="setup">
+      <div>
+        <div class="tag" style="padding-bottom:6px">Компьютер</div>
+        <div class="row"><span class="k">Процессор</span><span class="v">AMD Ryzen 7 9800X3D</span></div>
+        <div class="row"><span class="k">Видеокарта</span><span class="v">GeForce RTX 5080</span></div>
+        <div class="row"><span class="k">Оперативка</span><span class="v">No INPUT 32 GB</span></div>
+        <div class="row"><span class="k">Монитор</span><span class="v">SDC 27X1QE</span></div>
+      </div>
+      <div>
+        <div class="tag" style="padding-bottom:6px">Девайсы</div>
+        <div class="row"><span class="k">Мышь</span><span class="v">Ninjutso Sora × Vaxee</span></div>
+        <div class="row"><span class="k">Клавиатура</span><span class="v">WLMOUSE YING75</span></div>
+        <div class="row"><span class="k">Коврик</span><span class="v">Crescent Olympus Series Poseido</span></div>
+        <div class="row"><span class="k">Наушники</span><span class="v">FiiO FD3 Pro Black</span></div>
+        <div class="row"><span class="k">Микрофон</span><span class="v">HyperX QuadCast S</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clips">
+    <h2>Нарезки и видео</h2>
+    <div class="disclaimer"><span class="k">Важно</span><div><strong>Эти видео не наши.</strong> Мы их не снимали и не монтировали. Каждое принадлежит каналу, который указан на карточке. Нажми на карточку, чтобы посмотреть оригинал на YouTube и поддержать автора.</div></div>
+    <div class="clips">
+      <a class="clip" href="https://www.youtube.com/watch?v=90HllPLC9U4" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">1:47</span></div>
+        <div class="cbody"><b>ABSOLUTE ?</b><span class="cmeta">Канал: <em>skywhywalker (официальный)</em> · 2,47 млн просмотров · 2022</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=lymdvhP27_o" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">1:22</span></div>
+        <div class="cbody"><b>s1mple vs skywhywalker</b><span class="cmeta">Канал: <em>skywhywalker (официальный)</em> · 2,08 млн просмотров · 2022</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=Xc4zloC0yd4" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">1:28</span></div>
+        <div class="cbody"><b>Скайволкер упал в самый низ спустя 7 часов игры (Only Up)</b><span class="cmeta">Канал: <em>SkyWhyЛайв</em> · 1,48 млн просмотров · 2023</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=3LItn8eFXH8" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">16:46</span></div>
+        <div class="cbody"><b>DEKO и EVELONE против STROGO и SKYWHYWALKER на турнире 2×2</b><span class="cmeta">Канал: <em>DEKO CHILL</em> · 605 тыс. просмотров · 2025</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=YxLdgqiPZ7E" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">17:36</span></div>
+        <div class="cbody"><b>donk играет против Strogo, Skywhywalker, ct0m, des0ut и DEKO на Faceit</b><span class="cmeta">Канал: <em>retryCS</em> · 788 тыс. просмотров · 2024</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=6kglmhPXUHk" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">12:34</span></div>
+        <div class="cbody"><b>Лучшие клипы Skywhywalker&#x27;а за всё время</b><span class="cmeta">Канал: <em>WHYSKY CLIPS</em> · 176 тыс. просмотров · 2025</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=yH22nJCkAMs" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">1:57</span></div>
+        <div class="cbody"><b>Skywhywalker смотрит поздравление из Африки</b><span class="cmeta">Канал: <em>skywhywalker лучшее</em> · 582 тыс. просмотров · 2022</span></div>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=fZEpTWvB1iw" target="_blank" rel="noopener">
+        <div class="screen"><span class="src">YouTube</span><span class="play" aria-hidden="true"></span><span class="dur">3:06</span></div>
+        <div class="cbody"><b>Эвелон смотрит клипы Skywhywalker</b><span class="cmeta">Канал: <em>Evelone Rofls</em> · 160 тыс. просмотров · 2024</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="links">
+    <h2>Где смотреть</h2>
+    <div class="links">
+      <a class="tw" href="https://www.twitch.tv/skywhywalker" target="_blank" rel="noopener">Twitch <small>@skywhywalker</small></a>
+      <a href="https://www.youtube.com/@skywhywalker" target="_blank" rel="noopener">YouTube <small>@skywhywalker</small></a>
+      <a href="https://t.me/skywhyw4lker" target="_blank" rel="noopener">Telegram <small>@skywhyw4lker</small></a>
+      <a href="https://www.tiktok.com/@skywhywalker" target="_blank" rel="noopener">TikTok <small>@skywhywalker</small></a>
+      <a href="https://vk.com/skywhywalk" target="_blank" rel="noopener">VK <small>skywhywalk</small></a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Sky Archive — неофициальный фан-сайт, сделан фанатом. Не связан со стримером. Все видео принадлежат их авторам.</span>
+    <span>Источники: <a href="https://cyber.sports.ru/streamers-twitch/blogs/3388632.html" target="_blank" rel="noopener">Cyber.Sports.ru</a>, <a href="https://esports.ru/counter-strike-2/news/skywhywalker-iznachalno-ne-planiroval-bez-vebki-strimit/" target="_blank" rel="noopener">Esports.ru</a>, <a href="https://esports.ru/news/skywhywalker-nazval-strogo-luchshim-cs-strimerom-slay-2025/" target="_blank" rel="noopener">Esports.ru (SLAY)</a>, <a href="https://respawn.media/celebrities/caw5b-skywhywalker-poluchil-permach-iz-za-kotorogo-nakonets-vyshel-na-ulitsu" target="_blank" rel="noopener">Respawn Media</a>, <a href="https://www.twitchmetrics.net/c/254030065-skywhywalker" target="_blank" rel="noopener">TwitchMetrics</a>, <a href="https://faceittracker.net/players/skywhywalker" target="_blank" rel="noopener">Faceit Tracker</a>, <a href="https://www.faceit.com/ru/players/skywhywalker" target="_blank" rel="noopener">Faceit</a>, описание <a href="https://www.twitch.tv/skywhywalker/about" target="_blank" rel="noopener">Twitch-канала</a> (девайсы).</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var now=new Date(), y=now.getFullYear();
+  var today=new Date(y,now.getMonth(),now.getDate());
+  var bd=new Date(y,10,25);
+  var age=y-2003-(today<bd?1:0);
+  if(today>bd) bd=new Date(y+1,10,25);
+  var days=Math.round((bd-today)/86400000);
+  function pl(n,a,b,c){var m=n%10,h=n%100;return n+' '+(m===1&&h!==11?a:(m>=2&&m<=4&&(h<12||h>14)?b:c));}
+  document.getElementById('age').textContent=pl(age,'год','года','лет');
+  document.getElementById('countdown').textContent=days===0?'Сегодня! 🎉':pl(days,'день','дня','дней');
+  document.getElementById('nextage').textContent=days===0?'С днём рождения!':'исполнится '+pl(bd.getFullYear()-2003,'год','года','лет');
+})();
+
+(function(){
+  var STAGES=[
+    {name:'Новичок',desc:'Недавно смотришь Ская? Начнём с базы.'},
+    {name:'Зритель',desc:'Уже сидишь в чате. Вопросы посложнее.'},
+    {name:'Олд',desc:'Только для тех, кто смотрит с самого начала.'},
+    {name:'Faceit',desc:'Финальный босс: цифры с его Faceit-аккаунта. Тут угадают только задроты.'}
+  ];
+  var Q=[
+    // stage 0
+    {s:0,q:'Как Ская зовут по-настоящему?',a:'Тимур Леонов',w:['Тимур Ляхов','Вадим Козаков','Иван Шурпатов'],e:'Его зовут Тимур Леонов.'},
+    {s:0,q:'В какую игру он играет чаще всего?',a:'Counter-Strike 2',w:['Dota 2','Valorant','Minecraft'],e:'Основная игра Ская — CS2, в основном на Faceit.'},
+    {s:0,q:'На какой платформе он стримит?',a:'Twitch',w:['Kick','YouTube','VK Play Live'],e:'Стримы идут на Twitch, а на YouTube выходят ролики.'},
+    {s:0,q:'Чего зрители никогда полностью не видели на его стримах?',a:'Его лицо',w:['Чат','Донаты','Геймплей'],e:'Скай стримит без вебки, лицо он полностью не показывал.'},
+    {s:0,q:'Из какой он страны?',a:'Россия',w:['Беларусь','Украина','Казахстан'],e:'Скай из России.'},
+    // stage 1
+    {s:1,q:'Когда у Ская день рождения?',a:'25 ноября',w:['25 декабря','15 ноября','3 октября'],e:'Он родился 25 ноября 2003 года.'},
+    {s:1,q:'Сколько примерно фолловеров у него на Twitch?',a:'Больше 1,3 млн',w:['Около 100 тысяч','Около 500 тысяч','Больше 5 млн'],e:'У канала больше 1,36 млн фолловеров.'},
+    {s:1,q:'С кем из стримеров он иногда играет вместе?',a:'Strogo',w:['Buster','Mokrivskyi','LenaGol0vach'],e:'Обычно Скай играет один, но иногда со Strogo.'},
+    {s:1,q:'Чем он часто занимается на стримах, кроме CS?',a:'Смотрит фильмы с чатом',w:['Играет в шахматы','Готовит еду','Ходит на IRL-прогулки'],e:'Киновечера с чатом — классика канала.'},
+    {s:1,q:'Какой мышкой он играет сейчас?',a:'Ninjutso Sora × Vaxee',w:['Logitech G Pro X Superlight','Razer Viper V3 Pro','Zowie EC2'],e:'Так написано в описании его Twitch-канала.'},
+    // stage 2
+    {s:2,q:'Когда он выложил единственное фото в маске?',a:'Сентябрь 2022',w:['Январь 2021','Июнь 2023','Март 2025'],e:'Фото появилось в его Telegram-канале в сентябре 2022 года.'},
+    {s:2,q:'Как называется самое популярное видео на его YouTube?',a:'«ABSOLUTE ?»',w:['«s1mple vs skywhywalker»','«Первый стрим»','«Face reveal»'],e:'«ABSOLUTE ?» набрал почти 2,5 млн просмотров.'},
+    {s:2,q:'С каким легендарным игроком связан его ролик февраля 2022?',a:'s1mple',w:['ZywOo','NiKo','m0NESY'],e:'Видео «s1mple vs skywhywalker» набрало больше 2 млн просмотров.'},
+    {s:2,q:'За просмотр какого фильма на стриме он получил перманентный бан?',a:'«Backrooms»',w:['«Мстители»','«Дюна»','«Оно»'],e:'Бан был за нарушение авторских прав при просмотре «Backrooms».'},
+    {s:2,q:'Сколько часов он поднимался в Only Up, прежде чем упасть в самый низ?',a:'7 часов',w:['2 часа','12 часов','24 часа'],e:'Семь часов подъёма — и всё заново.'},
+    // stage 3 — Faceit (данные Faceit на октябрь 2026)
+    {s:3,q:'Какой у Ская максимальный ELO на Faceit в CS2?',a:'3893',w:['3412','4150','3640'],e:'Пик — 3893 ELO, в 7-м сезоне Faceit (ноябрь 2025 — апрель 2026).'},
+    {s:3,q:'Сколько матчей сыграно на его Faceit-аккаунте?',a:'Больше 5000',w:['Около 1000','Около 2500','Больше 10 000'],e:'На аккаунте больше 5000 матчей.'},
+    {s:3,q:'Какая у него самая длинная серия побед на Faceit?',a:'14 подряд',w:['8 подряд','21 подряд','30 подряд'],e:'Рекорд — 14 побед подряд.'},
+    {s:3,q:'На какой карте он сыграл больше всего матчей?',a:'Mirage',w:['Inferno','Nuke','Ancient'],e:'Mirage — его самая сыгранная карта: больше 800 матчей.'},
+    {s:3,q:'Какой у него K/D за всё время на Faceit?',a:'1.25',w:['0.98','1.52','1.75'],e:'K/D за всё время — 1.25.'}
+  ];
+  var RANKS=[
+    {min:0,t:'Залётный',d:'Ты только зашёл на огонёк. Включай стримы почаще, и всё впереди.'},
+    {min:7,t:'Новичок в чате',d:'Базу знаешь, но до своих в чате ещё далеко.'},
+    {min:11,t:'Свой в чате',d:'Ты точно смотришь Ская регулярно.'},
+    {min:15,t:'Олд',d:'Ты помнишь то, что новички даже не застали.'},
+    {min:18,t:'Faceit-гуру',d:'Ты знаешь даже его цифры на Faceit. Уважение.'},
+    {min:20,t:'Легенда чата',d:'20 из 20. Ты знаешь про Ская больше, чем его вебка.'}
+  ];
+  var stagesEl=document.getElementById('qStages'), main=document.getElementById('qMain');
+  var idx,score,perStage,order;
+
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function drawStages(){
+    var cur=idx<Q.length?Q[idx].s:3;
+    stagesEl.innerHTML=STAGES.map(function(st,i){
+      var done=Q.filter(function(q,k){return q.s===i&&k<idx;}).length;
+      return '<div class="qst'+(i===cur?' on':'')+'"><div class="bar"><i style="width:'+(done/5*100)+'%"></i></div><span class="lab">'+(i+1)+'. '+st.name+'</span></div>';
+    }).join('');
+  }
+
+  function start(){
+    idx=0;score=0;perStage=[0,0,0];
+    drawStages();
+    main.innerHTML='<div class="qintro"><span class="tag">4 этапа · 20 вопросов</span><p class="big">Проверь себя</p><p class="qfb">Сначала простые вопросы для новичков, потом для постоянных зрителей, для олдов и в конце — самые сложные, про его Faceit.</p></div><button class="qbtn" id="qGo" type="button">Начать тест</button>';
+    document.getElementById('qGo').onclick=function(){show();};
+  }
+
+  function stageIntro(s,cb){
+    main.innerHTML='<div class="qintro"><span class="tag">Этап '+(s+1)+' из 4</span><p class="big">'+STAGES[s].name+'</p><p class="qfb">'+STAGES[s].desc+'</p></div><button class="qbtn" id="qGo" type="button">Поехали</button>';
+    var b=document.getElementById('qGo');b.onclick=cb;b.focus();
+  }
+
+  function show(){
+    drawStages();
+    if(idx>=Q.length)return result();
+    var q=Q[idx];
+    if(idx>0&&Q[idx-1].s!==q.s&&!q._intro){q._intro=true;return stageIntro(q.s,show);}
+    order=shuffle([q.a].concat(q.w));
+    main.innerHTML='<div class="qhead"><span>Этап '+(q.s+1)+' · '+STAGES[q.s].name+'</span><span>Вопрос '+(idx+1)+' / '+Q.length+' · Очки: '+score+'</span></div>'+
+      '<p class="qtext">'+esc(q.q)+'</p><div class="qopts">'+order.map(function(o,i){return '<button class="qopt" type="button" data-i="'+i+'">'+esc(o)+'</button>';}).join('')+'</div><div id="qAfter"></div>';
+    Array.prototype.forEach.call(main.querySelectorAll('.qopt'),function(btn){btn.onclick=function(){answer(+btn.getAttribute('data-i'));};});
+  }
+
+  function answer(i){
+    var q=Q[idx], right=order[i]===q.a, btns=main.querySelectorAll('.qopt');
+    Array.prototype.forEach.call(btns,function(b,k){b.disabled=true;if(order[k]===q.a)b.classList.add('ok');});
+    if(right){score++;perStage[q.s]++;}else btns[i].classList.add('bad');
+    var last=idx===Q.length-1;
+    document.getElementById('qAfter').innerHTML='<p class="qfb"><b>'+(right?'Верно!':'Мимо.')+'</b> '+esc(q.e)+'</p><button class="qbtn" id="qNext" type="button" style="margin-top:14px">'+(last?'Узнать результат':'Дальше')+'</button>';
+    var n=document.getElementById('qNext');n.onclick=function(){idx++;show();};n.focus();
+  }
+
+  function result(){
+    var r=RANKS[0];RANKS.forEach(function(x){if(score>=x.min)r=x;});
+    main.innerHTML='<div class="qres"><span class="tag">Твой ранг</span><p class="rank">'+r.t+'</p><span class="score">'+score+' из 20 правильных</span><p class="qfb">'+r.d+'</p>'+
+      '<div class="qbreak">'+STAGES.map(function(st,i){return '<div><span class="k">'+st.name+'</span><b>'+perStage[i]+' / 5</b></div>';}).join('')+'</div>'+
+      '<button class="qbtn" id="qAgain" type="button">Пройти ещё раз</button></div>';
+    Q.forEach(function(q){delete q._intro;});
+    document.getElementById('qAgain').onclick=start;
+  }
+
+  start();
+})();
+</script>
+
+</body>
+</html>

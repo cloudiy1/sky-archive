@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cloudiy1.github.io/sky-archive/sitemap.xml
