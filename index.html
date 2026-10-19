@@ -7,7 +7,7 @@
 <meta name="description" content="Sky Archive — фан-сайт о стримере Skywhywalker (Тимур Леонов): биография, дата рождения, факты, хронология, девайсы, нарезки и тест на 20 вопросов.">
 <meta name="keywords" content="Sky Archive, skywhywalker, скайвайволкер, скайволкер, Тимур Леонов, skywhywalker фан сайт, skywhywalker биография, skywhywalker тест, skywhywalker девайсы, skywhywalker faceit">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0c0f16">
+<meta name="theme-color" content="#09070f">
 <link rel="icon" href="favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sky Archive">
@@ -24,7 +24,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Sky Archive", "description": "Sky Archive — фан-сайт о стримере Skywhywalker (Тимур Леонов): биография, дата рождения, факты, хронология, девайсы, нарезки и тест на 20 вопросов.", "inLanguage": "ru", "about": {"@type": "Person", "name": "Тимур Леонов", "alternateName": ["Skywhywalker", "Скайвайволкер", "Скайволкер"], "birthDate": "2003-11-25", "sameAs": ["https://www.twitch.tv/skywhywalker", "https://www.youtube.com/@skywhywalker", "https://t.me/skywhyw4lker"]}}</script>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 /* Layout: long single-column fan profile — photo hero, dossier grid, stats strip, story, timeline, facts, setup, clip grid, links. Committed dark look (night stream room). */
 :root{
@@ -258,6 +258,40 @@ footer a.mail:hover{text-decoration:underline}
 .gmeta em{font-style:normal;color:var(--ice)}
 .gmeta a{color:var(--muted)}
 
+/* watched */
+.wtabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.wtab{font:inherit;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;border-radius:4px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer}
+.wtab b{color:var(--fg);margin-left:6px;font-variant-numeric:tabular-nums}
+.wtab[aria-selected="true"]{border-color:var(--ice);color:var(--ice)}
+.wtab:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+.wtop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.wtop div{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--ice);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.wtop .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wtop b{font-size:15px;line-height:1.3}
+.wtop small{color:var(--muted);font-size:13px}
+.wlist{display:flex;flex-direction:column;gap:8px}
+.witem{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:12px 16px;min-width:0}
+.witem .wt{font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.witem .wt span{color:var(--muted);font-weight:400}
+.witem .wm{grid-column:1;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
+.witem .wr{grid-row:1/3;grid-column:2;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:86px}
+.witem .wr b{font-family:var(--display);font-weight:800;font-size:1.3rem;font-variant-numeric:tabular-nums;line-height:1}
+.witem .wr b small{font-size:12px;color:var(--muted);font-weight:400}
+.witem .wr .bar{width:86px;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.witem .wr .bar i{display:block;height:100%;background:var(--ice)}
+.witem .wr .na{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.witem.lo .wr b{color:#f0a0a3}.witem.lo .wr .bar i{background:var(--red)}
+.witem.hi .wr b{color:var(--ice)}
+.wmore{margin:24px 0 10px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.wgame{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.wgame b{line-height:1.3;overflow-wrap:anywhere}
+.wgame a{font-size:13px;color:var(--ice);text-decoration:none;margin-top:auto}
+.wgame a:hover{text-decoration:underline}
+.wnote{margin:16px 0 0;font-size:13px;color:var(--muted)}
+@media (max-width:760px){.wtop{grid-template-columns:minmax(0,1fr)}.wgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:330px){.wgrid{grid-template-columns:minmax(0,1fr)}}
+
 /* quiz */
 .quiz{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:22px}
 .qstages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
@@ -302,6 +336,80 @@ footer a.mail:hover{text-decoration:underline}
 .soc{position:relative}
 .x{}
 @media (prefers-reduced-motion:reduce){.livei.on i,.lc-dot i{animation:none}.soc,.sgo,.links a,.clip,.qopt,.qst .bar i{transition:none}.clip:hover,.links a:hover{transform:none}}
+
+/* ===== NEON THEME ===== */
+:root{
+  --bg:#09070f;--panel:#130e1f;--panel2:#1a1330;--line:#2a2045;
+  --fg:#f2eefe;--muted:#a097bf;--ice:#b48cff;--twitch:#a970ff;--red:#ff4d5e;
+  --display:"Inter","Arial Black",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --glow:0 0 22px rgba(169,112,255,.5);
+}
+body{background:radial-gradient(900px 600px at 85% -5%,rgba(169,112,255,.16),transparent 60%),radial-gradient(700px 500px at -10% 40%,rgba(169,112,255,.07),transparent 60%),var(--bg);background-color:var(--bg)}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(1.6rem,5vw,2.1rem);letter-spacing:-.03em;line-height:1.05}
+nav{border-bottom-color:#22183a}
+nav .brand{font-weight:900;font-size:16px;letter-spacing:-.02em}
+nav .brand span{color:var(--twitch);text-shadow:0 0 14px var(--twitch)}
+nav a.on{color:var(--fg);text-shadow:0 0 12px var(--twitch)}
+
+/* hero */
+.hero{position:relative;display:block;margin:0 -16px}
+.hpic{position:relative;height:min(560px,128vw);overflow:hidden}
+.hpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(1.1) contrast(1.08)}
+.hpic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,7,15,0) 45%,rgba(9,7,15,.8) 78%,var(--bg) 100%),linear-gradient(90deg,rgba(169,112,255,.35),transparent 65%)}
+.htxt{position:relative;z-index:1;margin-top:-190px;padding:0 16px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.chip{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ice);border:1px solid var(--twitch);border-radius:20px;padding:5px 11px;background:rgba(9,7,15,.8);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(3rem,14vw,6rem);line-height:.88;letter-spacing:-.045em;text-transform:uppercase}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--twitch);text-shadow:0 0 26px rgba(169,112,255,.6)}
+.hero .real{font-size:1.05rem;margin-top:4px}
+.hero .lede{color:#c4bbe0;font-size:15px;line-height:1.55;max-width:60ch}
+@media (min-width:761px){
+  .hero{margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:36px;align-items:end}
+  .hpic{height:520px;border-radius:22px;border:1px solid var(--line)}
+  .hpic::after{background:linear-gradient(160deg,rgba(169,112,255,.3),transparent 55%)}
+  .htxt{margin-top:0;padding:0}
+}
+
+/* cards */
+.facts{border-radius:16px;background:var(--line)}
+.fact{background:var(--panel)}
+.stat{border-top:0;border-radius:16px;padding:16px;background:linear-gradient(145deg,#1b1330,#120d20);border:1px solid #2c2050}
+.stat .n{background:linear-gradient(90deg,#fff,#c9a7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tri,.term,.game,.clip,.quiz,.witem,.wgame,.wtop div,.friend,.wall,.disclaimer{border-radius:16px}
+.term{border-left-color:var(--twitch)}
+.wtop div{border-top:1px solid #2c2050;background:linear-gradient(145deg,#1b1330,#120d20)}
+.wtop b{font-weight:800}
+.tri:hover,.wgame:hover,.witem:hover{border-color:#3c2c66}
+.quote{border-left-color:var(--twitch)}
+.tl time{color:var(--ice)}
+.gtag{border-radius:20px}
+.gscreen .play{background:var(--twitch);box-shadow:var(--glow)}
+.links a{border-radius:30px}
+.copy{border-radius:20px}
+
+/* buttons & tabs */
+.wtab{border-radius:30px;border:0;background:#171126;font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:0;text-transform:none;padding:10px 18px}
+.wtab[aria-selected="true"]{background:var(--twitch);color:#0b0713;box-shadow:var(--glow)}
+.wtab[aria-selected="true"] b{color:#0b0713}
+.qbtn{border-radius:30px;background:var(--twitch);color:#0b0713;box-shadow:var(--glow)}
+.qopt{border-radius:14px}
+.qst .bar i{background:var(--twitch);box-shadow:var(--glow)}
+.qres .rank{color:var(--ice);text-shadow:0 0 24px rgba(169,112,255,.55)}
+.totop{background:var(--twitch);color:#0b0713;border:0;box-shadow:var(--glow)}
+
+/* film rows with rating rings */
+.witem{grid-template-columns:auto minmax(0,1fr);gap:14px;padding:12px 14px}
+.wtx{display:flex;flex-direction:column;gap:6px;min-width:0}
+.witem .wm{grid-column:auto}
+.ring{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;position:relative;
+  background:conic-gradient(var(--twitch) calc(var(--r)*10%),#2a2140 0)}
+.ring::before{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--panel)}
+.ring span{position:relative;font-weight:900;font-size:14px;font-variant-numeric:tabular-nums}
+.witem.hi .ring{box-shadow:0 0 18px rgba(169,112,255,.45)}
+.witem.lo .ring{background:conic-gradient(var(--red) calc(var(--r)*10%),#2a2140 0)}
+.witem.no .ring span{color:var(--muted)}
+.wmore{color:#7d72a0;font-weight:800;font-family:var(--body);letter-spacing:.14em}
+.wgame a{color:var(--ice)}
 </style>
 </head>
 <body>
@@ -309,7 +417,7 @@ footer a.mail:hover{text-decoration:underline}
 
 <div class="wrap" id="top">
   <nav aria-label="Разделы">
-    <a class="brand" href="#top">Sky<span>Archive</span></a><a class="livei" id="liveInd" href="https://www.twitch.tv/skywhywalker" target="_blank" rel="noopener" hidden><i></i><span>Офлайн</span></a><a href="#dossier">Досье</a><a href="#stats">Цифры</a><a href="#story">История</a><a href="#facts">Фишки</a><a href="#slang">Словарик</a><a href="#quiz">Тест</a><a href="#setup">Сетап</a><a href="#clips">Нарезки</a><a href="#games">Прохождения</a><a href="#friends">Друзья</a><a href="#wall">Отзывы</a><a href="#links">Ссылки</a>
+    <a class="brand" href="#top">Sky<span>Archive</span></a><a class="livei" id="liveInd" href="https://www.twitch.tv/skywhywalker" target="_blank" rel="noopener" hidden><i></i><span>Офлайн</span></a><a href="#dossier">Досье</a><a href="#stats">Цифры</a><a href="#story">История</a><a href="#facts">Фишки</a><a href="#slang">Словарик</a><a href="#quiz">Тест</a><a href="#setup">Сетап</a><a href="#clips">Нарезки</a><a href="#games">Прохождения</a><a href="#watched">Фильмы и игры</a><a href="#friends">Друзья</a><a href="#wall">Отзывы</a><a href="#links">Ссылки</a>
   </nav>
 
   <a class="livecard" id="liveCard" href="https://www.twitch.tv/skywhywalker" target="_blank" rel="noopener" hidden>
@@ -321,13 +429,9 @@ footer a.mail:hover{text-decoration:underline}
   <canvas class="confetti" id="confetti" aria-hidden="true" hidden></canvas>
 
   <section class="hero">
-    <figure class="photo">
-      <img src="photo.jpg" width="700" height="1100" alt="Skywhywalker в медицинской маске и чёрно-белом шарфе">
-      <div class="live"><i></i>FACE&nbsp;REVEAL?</div>
-      <figcaption>Одно из редких фото — в маске, как обычно.</figcaption>
-    </figure>
-    <div class="name">
-      <div class="tag"><b>Sky Archive</b> · фан-сайт о Skywhywalker</div>
+    <div class="hpic"><img src="photo.jpg" width="700" height="1100" alt="Skywhywalker в медицинской маске и чёрно-белом шарфе"></div>
+    <div class="htxt">
+      <span class="chip">Фан-сайт · 1,36 млн на Twitch</span>
       <h1>Sky<span>why</span>walker</h1>
       <p class="real">Тимур Леонов <em>· он же Скайвайволкер, Скай</em></p>
       <p class="lede">Российский стример, который вырос до миллиона с лишним фолловеров на Twitch, так ни разу и не включив вебку. Играет в Counter-Strike на Faceit, смотрит фильмы со зрителями и держит лицо в секрете.</p>
@@ -456,6 +560,24 @@ footer a.mail:hover{text-decoration:underline}
     <p class="sub">15 самых популярных прохождений Ская за последние три года, от самого просматриваемого. Хорроры, новеллы, Elden Ring и кооп со Stanislaw9.</p>
     <p class="own"><span>Не наше</span>Нарезки стримов с каналов РЕЖУ SKYWHYWALKER, skywhywalker нарезки и SKYWHYREZKI.</p>
     <div class="games" id="gamesList"></div>
+  </section>
+
+  <section id="watched">
+    <h2>Что Скай уже смотрел и во что играл</h2>
+    <p class="sub">Фильмы, сериалы и аниме с совместных просмотров на стримах — с оценкой, которую Скай ставит в конце. И список игр, которые он проходил в эфире.</p>
+    <div class="wtabs" role="tablist" aria-label="Фильмы или игры">
+      <button class="wtab" id="wtFilms" type="button" role="tab" aria-selected="true" aria-controls="wpFilms">Фильмы и аниме<b id="wcFilms"></b></button>
+      <button class="wtab" id="wtGames" type="button" role="tab" aria-selected="false" aria-controls="wpGames">Игры<b id="wcGames"></b></button>
+    </div>
+    <div id="wpFilms" role="tabpanel" aria-labelledby="wtFilms">
+      <div class="wtop" id="wTop"></div>
+      <div id="wFilms"></div>
+      <p class="wnote">Оценки — те, что Скай называет в конце просмотра. Список пополняется: если знаешь, что он ещё смотрел, — пиши через «Ссылки».</p>
+    </div>
+    <div id="wpGames" role="tabpanel" aria-labelledby="wtGames" hidden>
+      <div class="wgrid" id="wGames"></div>
+      <p class="wnote">«Смотреть нарезку» ведёт к видео в разделе «Прохождения» выше.</p>
+    </div>
   </section>
 
   <section id="friends">
@@ -698,6 +820,94 @@ footer a.mail:hover{text-decoration:underline}
 })();
 
 (function(){
+  // Фильмы: n — название, y — год, k — тип, d — дата стрима, r — оценка Ская
+  var F=[
+    {n:'Человек, который изменил всё',y:2011,k:'Фильм',d:'03.08.2026',r:6.5},
+    {n:'Мумия',y:2026,k:'Хоррор',d:'29.07.2026',r:5.75},
+    {n:'Закулисье реальности',y:2026,k:'Хоррор',d:'15.07.2026',r:5},
+    {n:'Обсессия',y:2026,k:'Фильм',d:'07.07.2026',r:5},
+    {n:'Крик 7',y:2026,k:'Хоррор',d:'22.05.2026',r:4.5},
+    {n:'Я иду искать 2',y:2026,k:'Хоррор',d:'16.05.2026',r:4},
+    {n:'Горничная',y:2025,k:'Триллер',d:'14.05.2026',r:6.75},
+    {n:'Одержимость',y:2014,k:'Фильм',d:'09.05.2026',r:8},
+    {n:'Магическая битва — 3 сезон',y:2026,k:'Аниме',d:'01.04.2026',r:7.5,x:'серии 1–12 за один стрим'},
+    {n:'Третий лишний 2',y:2015,k:'Комедия',d:'08.03.2026',r:7},
+    {n:'Третий лишний',y:2012,k:'Комедия',d:'07.03.2026',r:8},
+    {n:'Баскетбол Куроко: Последняя игра',y:2017,k:'Аниме',d:'21.01.2026',r:8.25},
+    {n:'Баскетбол Куроко — 1–3 сезоны',y:2012,k:'Аниме',d:'04–12.01.2026',r:8.5,x:'75 серий за 9 стримов подряд'}
+  ];
+  var FO=[
+    {n:'Орудия',y:2025,k:'Хоррор'},
+    {n:'Бэтмен',y:2022,k:'Фильм'},
+    {n:'Тёмный рыцарь',y:2008,k:'Фильм'},
+    {n:'Бэтмен: Начало',y:2005,k:'Фильм'},
+    {n:'Магическая битва — 2 сезон',y:2023,k:'Аниме'},
+    {n:'13 грехов',y:2014,k:'Хоррор'},
+    {n:'Судная ночь',y:2013,k:'Хоррор'},
+    {n:'Пиковая дама. Чёрный обряд',y:2015,k:'Хоррор'},
+    {n:'Крик',y:1996,k:'Хоррор'},
+    {n:'Кунг-фу панда',y:2008,k:'Мультфильм'}
+  ];
+  // Игры: v — есть видео в «Прохождениях»
+  var GM=[
+    {n:'Escape from Yandere',t:['Хоррор'],v:1},{n:'MiSide',t:['Хоррор'],v:1},
+    {n:'Doki Doki Literature Club!',t:['Новелла','Хоррор'],v:1},{n:'HELLMART',t:['Хоррор'],v:1},
+    {n:'Amnesia: The Bunker',t:['Хоррор'],v:1},{n:'KIOSK',t:['Хоррор'],v:1},
+    {n:'No, I’m not a Human',t:['Хоррор'],v:1},{n:'Fears to Fathom: Scratch Creek',t:['Хоррор','Кооп'],v:1},
+    {n:'Fears to Fathom: Woodbury Getaway',t:['Хоррор'],v:1},{n:'Parasocial',t:['Хоррор'],v:1},
+    {n:'The Exit 8',t:['Аномалии'],v:1},{n:'Photomaly',t:['Хоррор'],v:1},
+    {n:'The Dark Pictures: Little Hope',t:['Хоррор','Кооп'],v:1},{n:'Outlast',t:['Хоррор']},
+    {n:'Resident Evil 7',t:['Хоррор']},{n:'Elden Ring',t:['Соулслайк'],v:1},
+    {n:'God of War',t:['Экшен']},{n:'Cyberpunk 2077',t:['RPG']},
+    {n:'Бесконечное лето',t:['Новелла']},{n:'Egging On',t:['Хардкор'],v:1},
+    {n:'Only Up!',t:['Хардкор']},{n:'Postal 2',t:['Экшен']},
+    {n:'Plants vs. Zombies',t:['Казуалка']},{n:'Minecraft',t:['Песочница']},
+    {n:'GeoGuessr',t:['Угадайка']}
+  ];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function fmt(r){return String(r).replace('.',',');}
+  function tag(t){return '<span class="gtag'+(t==='Хоррор'?' h':'')+'">'+esc(t)+'</span>';}
+  function row(f){
+    var has=typeof f.r==='number', cls=has?(f.r>=8?' hi':(f.r<5?' lo':'')):' no';
+    return '<article class="witem'+cls+'">'+
+      '<span class="ring" style="--r:'+(has?f.r:0)+'" aria-label="'+(has?'Оценка '+fmt(f.r)+' из 10':'Без оценки')+'"><span>'+(has?fmt(f.r):'—')+'</span></span>'+
+      '<div class="wtx"><span class="wt">'+esc(f.n)+' <span>('+f.y+')</span></span>'+
+      '<span class="wm">'+tag(f.k)+(f.d?'<span>Стрим '+f.d+'</span>':'<span>без оценки</span>')+(f.x?'<span>'+esc(f.x)+'</span>':'')+'</span></div></article>';
+  }
+  var box=document.getElementById('wFilms'); if(!box)return;
+  // Группы по порядку: фильмы → хорроры → аниме → комедии → мультфильмы
+  var GR=[['Фильмы',['Фильм','Триллер']],['Хорроры',['Хоррор']],['Аниме',['Аниме']],['Комедии',['Комедия']],['Мультфильмы',['Мультфильм']]];
+  var ALL=F.concat(FO);
+  box.innerHTML=GR.map(function(g){
+    var L=ALL.filter(function(f){return g[1].indexOf(f.k)>-1;});
+    if(!L.length)return '';
+    return '<p class="wmore">'+g[0]+' · '+L.length+'</p><div class="wlist">'+L.map(row).join('')+'</div>';
+  }).join('');
+  var sorted=F.slice().sort(function(a,b){return b.r-a.r;});
+  var avg=F.reduce(function(s,f){return s+f.r;},0)/F.length;
+  var lo=sorted[sorted.length-1];
+  document.getElementById('wTop').innerHTML=
+    '<div><span class="k">Высшая оценка</span><b>'+esc(sorted[0].n)+'</b><small>'+fmt(sorted[0].r)+' из 10</small></div>'+
+    '<div><span class="k">Ниже всех</span><b>'+esc(lo.n)+'</b><small>'+fmt(lo.r)+' из 10</small></div>'+
+    '<div><span class="k">Средняя оценка</span><b>'+fmt(avg.toFixed(1))+' / 10</b><small>по '+F.length+' просмотрам</small></div>';
+  document.getElementById('wcFilms').textContent=F.length+FO.length;
+  document.getElementById('wcGames').textContent=GM.length;
+  document.getElementById('wGames').innerHTML=GM.map(function(g){
+    return '<article class="wgame"><div class="gtags">'+g.t.map(tag).join('')+'</div><b>'+esc(g.n)+'</b>'+(g.v?'<a href="#games">Смотреть нарезку ↑</a>':'')+'</article>';
+  }).join('');
+  var tabs=[['wtFilms','wpFilms'],['wtGames','wpGames']];
+  tabs.forEach(function(t){
+    document.getElementById(t[0]).addEventListener('click',function(){
+      tabs.forEach(function(u){
+        var on=u[0]===t[0];
+        document.getElementById(u[0]).setAttribute('aria-selected',on?'true':'false');
+        document.getElementById(u[1]).hidden=!on;
+      });
+    });
+  });
+})();
+
+(function(){
   var btn=document.getElementById('toTop'); if(!btn)return;
   var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]:not(.brand)'));
   function onScroll(){
@@ -768,7 +978,7 @@ footer a.mail:hover{text-decoration:underline}
   }
 
   function start(){
-    idx=0;score=0;perStage=[0,0,0];
+    idx=0;score=0;perStage=[0,0,0,0];
     drawStages();
     main.innerHTML='<div class="qintro"><span class="tag">4 этапа · 20 вопросов</span><p class="big">Проверь себя</p><p class="qfb">Сначала простые вопросы для новичков, потом для постоянных зрителей, для олдов и в конце — самые сложные, про его Faceit.</p></div><button class="qbtn" id="qGo" type="button">Начать тест</button>';
     document.getElementById('qGo').onclick=function(){show();};
