@@ -410,6 +410,9 @@ nav a.on{color:var(--fg);text-shadow:0 0 12px var(--twitch)}
 .witem.no .ring span{color:var(--muted)}
 .wmore{color:#7d72a0;font-weight:800;font-family:var(--body);letter-spacing:.14em}
 .wgame a{color:var(--ice)}
+.rv-on .rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .75s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rvd,0ms)}
+.rv-on .rv.rv-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv-on .rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -1030,5 +1033,35 @@ nav a.on{color:var(--fg);text-shadow:0 0 12px var(--twitch)}
 })();
 </script>
 
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var root=document.documentElement; root.classList.add('rv-on');
+  var SEL='.hero .hpic,.hero .htxt,section>h2,section>.sub,section>.note,section>.own,.facts,.stat,.story>div,.quote,.tl>li,.tri,.term,.quiz,.setup>div,.wtabs,.wtop>*,#wFilms>*,#wGames>*,.games>*,.friend,.wall,.soc,footer>*';
+  var batch=[],timer=0;
+  function done(el){el.classList.remove('rv','rv-in');el.style.removeProperty('--rvd');}
+  function flush(){
+    var seen=new Map();
+    batch.forEach(function(el){
+      var p=el.parentNode,n=seen.get(p)||0;seen.set(p,n+1);
+      el.style.setProperty('--rvd',Math.min(n*90,450)+'ms');
+      el.classList.add('rv-in');
+      var t=setTimeout(function(){done(el);},1400);
+      el.addEventListener('transitionend',function f(e){if(e.target===el&&e.propertyName==='transform'){clearTimeout(t);el.removeEventListener('transitionend',f);done(el);}});
+    });
+    batch=[];timer=0;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);batch.push(e.target);}});
+    if(batch.length&&!timer)timer=requestAnimationFrame(flush);
+  },{rootMargin:'0px 0px -8% 0px',threshold:0});
+  function add(el){if(el.dataset.rv)return;el.dataset.rv='1';el.classList.add('rv');io.observe(el);}
+  function scan(){document.querySelectorAll(SEL).forEach(add);}
+  scan();
+  var mo=new MutationObserver(function(){scan();});
+  ['clipsList','gamesList','wFilms','wTop','wGames'].forEach(function(id){var b=document.getElementById(id);if(b)mo.observe(b,{childList:true});});
+})();
+</script>
 </body>
 </html>
